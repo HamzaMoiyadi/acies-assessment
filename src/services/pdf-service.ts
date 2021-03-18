@@ -9,7 +9,7 @@ export const downloadPDF = (tabId: number) => {
     let imgHeight = (canvas.height * imgWidth) / canvas.width;
     const pdf = new jsPDF();
     pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
-    pdf.save("download.pdf");
+    pdf.save(`Analysis Tab ${tabId}.pdf`);
   });
 };
 
