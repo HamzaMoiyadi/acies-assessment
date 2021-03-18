@@ -64,13 +64,22 @@ main {
   border: 1px solid var(--border-color);
   padding: 0.5rem;
   font-weight: bold;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
 }
 
+.tab header.active {
+  border-bottom: none;
+}
 .tab .content {
   position: absolute;
+  z-index: 1;
   left: 0;
   top: 97%;
   border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  min-height: 100px;
 }
 
 .content img {

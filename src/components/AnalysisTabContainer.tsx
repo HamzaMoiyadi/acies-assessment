@@ -22,7 +22,9 @@ const AnalysisTabContainer: React.FC<AnalysisTabContainerComponent> = ({
               }}
               key={`tab-${id}`}
             >
-              <header>Analysis Tab {id}</header>
+              <header className={activeTab === id ? "active" : ""}>
+                Analysis Tab {id}
+              </header>
               {activeTab === id ? (
                 <>
                   <section className="content" id={`content_${id}`}>
