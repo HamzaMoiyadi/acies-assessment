@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+:root {
+  --header-color: hsla(58, 89%, 40%, 1);
+  --border-color: hsla(0, 0%, 65%, 1);
+}
+#header {
+  height: 5%;
+  background-color: var(--header-color);
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}
+#header h1 {
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  margin: 0 auto;
+  width: 100%;
+
+  margin-top: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#utilities {
+  margin-bottom: 1rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#utilities * + * {
+  margin-left: 0.75rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#utilities #share_pdf_form {
+  border: none;
+  display: inline;
+}
+
+#share_pdf_form label {
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+#utilities button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+#share_pdf_form input,
+#share_pdf_form button {
+  padding: 0.25rem 0.5rem;
+}
+
+#tab_container {
+  list-style: none;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+#tab_container .tab {
+  display: inline;
+  width: 25%;
+  cursor: pointer;
+}
+
+.tab header {
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.tab .content {
+  position: absolute;
+  left: 0;
+  top: 97%;
+  border: 1px solid var(--border-color);
+}
+
+.content img {
+  max-width: 100%;
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  main {
+    max-width: 550px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  main {
+    max-width: 700px;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  main {
+    max-width: 900px;
+  }
+
+  .tab .content {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  main {
+    max-width: 1024px;
   }
 }
